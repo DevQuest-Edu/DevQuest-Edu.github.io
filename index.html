@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevQuest Education</title>
+
+  <!-- Google Font (Poppins) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+
+  <!-- Font Awesome for Social Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p1Cm27m0yXf1k+ZBvIr/8nYXn3bskHfNHk+xf2SYxXkCYa2/OFaFl5niZBdIYkBtFpVfajwh8+eqbOg9l+Y2kg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Your Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header (unchanged) -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img
+          src="DevQuest Education white.png"
+          alt="DevQuest Education Logo"
+          class="logo-img"
+        />
+      </a>
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav">
+        <ul class="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section (with enhanced animations) -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay" data-aos="fade" data-aos-duration="1200"></div>
+
+    <!-- Hero content + (optional) social icons on the right -->
+    <div class="hero-container container">
+      <!-- LEFT: Hero text + button -->
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
+        <p class="subtitle" data-aos="fade-down" data-aos-delay="200" data-aos-duration="800">
+          <span id="typing-welcome"></span>
+        </p>
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="350" data-aos-duration="900">
+          Ignite Your Child's
+          <span class="aurora-text" style="font-size: 64px; font-weight: bolder;" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">Coding Adventure.</span>
+        </h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="650" data-aos-duration="900" style="font-size: 18px;">
+          Hands-on coding and more in small classes with top-tier tutors. While
+          building their future <br class="mobile-only-break">
+          <span class="highlight-git"><span class="aurora-text">Git portfolios.</span></span> 
+        </p>
+        <a
+          href="#courses"
+          class="btn btn-primary"
+          aria-label="Explore Courses"
+          onclick="document.getElementById('courses').scrollIntoView({ behavior: 'smooth' }); return false;"
+          data-aos="fade-up"
+          data-aos-delay="800"
+          data-aos-duration="900"
+        >
+          Explore Courses
+          <!-- SVG arrow (rightward) -->
+          <svg
+            class="btn-icon"
+            aria-hidden="true"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z"
+              fill="#ffffff"
+            />
+          </svg>
+        </a>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- About Section (unchanged) -->
+  <section id="about" class="about-section" style="background-color: #faf5ff;">
+    <div class="about-overlay"></div>
+    
+    <div class="container about-container" >
+      <h2 data-aos="fade-right">About DevQuest Education</h2>
+      <p data-aos="fade-left">
+        DevQuest Education is a boutique coding academy that offers small,
+        project-focused classes where students learn professional tools like <span class="aurora-text" style="font-size: 30px;">VS
+        Code</span> and <span class="aurora-text" style="font-size: 30px;">Git</span> from day one. Rather than just teaching syntax, we guide
+        beginners to <span  class="animated-underline" style="font-weight: bold;">build real projects</span>  and a polished <span class="aurora-text" style="font-size: 30px;">GitHub portfolio</span>,
+        ensuring every line of code has a purpose and can be showcased.
+      </p>
+      <a href="about.html" class="btn btn-primary" data-aos="zoom-in"
+        >Read More
+        <svg
+          class="btn-icon"
+          aria-hidden="true"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z"
+            fill="#fff"
+          />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Courses Section (unchanged) -->
+  <section id="courses" class="courses-section" style="background-color: #eae6ef;">
+    <div class="container">
+      <h2 data-aos="fade-right">Our Courses</h2>
+      <h2 data-aos="fade-left" style="font-size: 20px; margin-top: -30px;">Your first time? Enjoy a <span class="aurora-text">FREE CLASS</span> to see if coding is right for your kid!</h2>
+      <h2 data-aos="fade-left" style="font-size: 20px; margin-top: -30px;"><span class="animated-underline">All classes run for <span class="aurora-text">5 weeks</span> during the school term.</span></h2>
+      <div class="course-grid">
+        <!-- Python Beginner Course -->
+        <div class="course-card" data-aos="flip-left">
+          <img
+            src="https://1000logos.net/wp-content/uploads/2020/08/Python-Logo.jpg"
+            alt="Python Course"
+          />
+          <div class="ribbon ribbon-full-noexp">
+            No Experience Required
+          </div>
+          <div class="course-content">
+            <h3>Python for Absolute Beginners (Y7-12)</h3>
+            <p>
+              Interactive course teaching Python and coding fundamentals, Git
+              portfolio building, and hands-on mini-projects.
+            </p>
+            <button class="btn-course" onclick="window.location.href='#contact';">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <!-- JavaScript Intro Course -->
+        <div class="course-card" data-aos="flip-left" data-aos-delay="100">
+          <img
+            src="html css.png"
+            alt="Web Building"
+          />
+          <div class="ribbon ribbon-full-noexp">
+            No Experience Required
+          </div>
+          <div class="course-content">
+            <h3>Website Building (Y7-12)</h3>
+            <p>
+              Learn HTML and CSS in a project-based setting. Build
+              dynamic web pages and interactive features and add them to your portfolio!
+            </p>
+            <button class="btn-course" onclick="window.location.href='#contact';">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <div class="course-card" data-aos="flip-left" data-aos-delay="100">
+          <img
+            src="JavaScript-Logo.png"
+            alt="JavaScript Course"
+          />
+          
+          <div class="course-content">
+            <h3>JavaScript (Amateur)</h3>
+            <p>
+              Learn the core JavaScript language alongside Node.js! A very useful course to understand
+              some complex coding structures and methods. 
+            </p>
+            <button class="btn-course" onclick="window.location.href='#contact';">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Python & Pygame Course (Under Construction) -->
+        <div class="course-card" data-aos="flip-left" data-aos-delay="200">
+          <img
+            class="grey-img"
+            src="https://images.seeklogo.com/logo-png/44/1/pygame-logo-png_seeklogo-442059.png"
+            alt="Python and Pygame"
+          />
+          <div class="ribbon ribbon-full-width">
+            Under Construction!
+          </div>
+          <div class="course-content">
+            <h3>Make a Game With Python!</h3>
+            <p>
+              Introduction to game development using Python libraries. Create
+              your own game from scratch!
+            </p>
+          </div>
+        </div>
+
+        <!-- Godot Course (Under Construction) -->
+        <div class="course-card" data-aos="flip-left" data-aos-delay="300">
+          <img
+            class="grey-img"
+            src="https://i.pcmag.com/imagery/reviews/04rQ7uhK3XVvRCnUs39JGrh-1..v1611784715.png"
+            alt="Godot Engine"
+          />
+          <div class="ribbon ribbon-full-width">
+            Under Construction!
+          </div>
+          <div class="course-content">
+            <h3>Make a Game With Godot Engine!</h3>
+            <p>
+              Introduction to game development using a game engine called
+              Godot. Create your own high‐quality game from scratch!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (unchanged except moved form ID) -->
+  <section id="contact" class="contact-section" >
+    <div class="container contact-container">
+      <h2 data-aos="fade-right">Contact Us</h2>
+      <div class="contact-wrapper" data-aos="fade-up">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:avdevquest@gmail.com">avdevquest@gmail.com</a>
+          </p>
+          <p><strong>Phone:</strong> 0423 549 723</p>
+          <p>
+            <strong>Location:</strong> Schofields, Sydney (Exact address
+            provided after enrollment)
+          </p>
+          <p>Follow us on social media:</p>
+          <p>
+            <a
+              href="https://www.facebook.com/profile.php?id=61576247230681"
+              target="_blank"
+              >Facebook</a
+            >
+          </p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <label for="name" style="color: #fff;">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email" style="color: #fff;">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone" style="color: #fff;">Phone Number</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              pattern="^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}( |-){0,1}[0-9]{2}( |-){0,1}[0-9]{2}( |-){0,1}[0-9]{1}( |-){0,1}[0-9]{3}$"
+            />
+
+            <label for="course" style="color: #fff;">Course Interested In</label>
+            <select
+              id="course"
+              name="course"
+              required
+              class="select-course"
+            >
+              <option value="" disabled selected>Select a course</option>
+              <option value="Python for Absolute Beginners">
+                Python for Absolute Beginners (Y7-12)
+              </option>
+              <option value="JavaScript & Web Basics">
+                Website Building (Y7-12)
+              </option>
+              <option value="JavaScript & Web Basics">
+                JavaScript (Amateur)
+              </option>
+              <option value="I haven't made my mind up yet">
+                I haven't made my mind up yet
+              </option>
+            </select>
+
+            <label for="message" style="color: #fff;">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <button type="submit" class="btn-secondary" form="contactForm">Submit</button>
+          </form>
+
+          <!-- Add loader markup just above the closing </div> of .contact-form-wrapper -->
+          <div id="formLoader" style="display:none; text-align:center; margin-top:20px;">
+            <div class="loader" style="display:inline-block; width:40px; height:40px; border:4px solid #a78bfa; border-top:4px solid #fff; border-radius:50%; animation:spin 1s linear infinite;"></div>
+            <p style="margin-top:10px; color:#ffffff;">Submitting...</p>
+          </div>
+
+          <style>
+          @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+          }
+          </style>
+
+          <script>
+            // 1. Replace this URL with your actual Web App URL from Apps Script
+            const scriptURL =
+              "https://script.google.com/macros/s/AKfycbxrjW8BAq5jZUeqhbPeVZm3OvkRXvEvFRkR6gUHiayycMqNtorg_iJuzxgAmtwkofeg/exec";
+            const form = document.getElementById("contactForm");
+            const loader = document.getElementById("formLoader");
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault(); // Prevent default form submission
+              loader.style.display = "block"; // Show loader
+
+              const formData = new FormData(form);
+
+              fetch(scriptURL, { method: "POST", body: formData })
+                .then((response) => response.json())
+                .then((result) => {
+                  loader.style.display = "none"; // Hide loader
+                  if (result.result === "success") {
+                    window.location.href = "thankyou.html";
+                  } else {
+                    alert("Error submitting form. Please try again later.");
+                    console.error(result.error);
+                  }
+                })
+                .catch((error) => {
+                  loader.style.display = "none"; // Hide loader
+                  alert("Error submitting form. Please try again later.");
+                  console.error("Fetch error:", error);
+                });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (unchanged) -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 DevQuest Education. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 900,
+        once: true,
+        offset: 80,
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.getElementById('main-nav');
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('nav-open');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Typing effect for WELCOME TO DEVQUEST EDUCATION
+    document.addEventListener('DOMContentLoaded', function() {
+      const el = document.getElementById('typing-welcome');
+      const text = "WELCOME TO DEVQUEST EDUCATION";
+      let i = 0;
+      function type() {
+        if (i <= text.length) {
+          el.textContent = text.slice(0, i);
+          i++;
+          setTimeout(type, 45);
+        }
+      }
+      type();
+    });
+
+    window.addEventListener('scroll', function() {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        // Disable zoom effect on mobile devices (width <= 600px)
+        if (window.innerWidth <= 600) {
+            hero.style.backgroundSize = "cover";
+            return;
+        }
+        // Only zoom while hero is in view
+        const scrollY = window.scrollY;
+        const maxZoom = 2.5; // Maximum zoom (e.g., 1.15 = 115%)
+        const minZoom = 1;    // Minimum zoom (100%)
+        const heroHeight = hero.offsetHeight;
+        // Calculate zoom based on scroll position (0 at top, maxZoom at bottom of hero)
+        let zoom = minZoom + ((Math.min(scrollY, heroHeight) / heroHeight) * (maxZoom - minZoom));
+        hero.style.backgroundSize = `${zoom * 100}% auto`;
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const underlines = document.querySelectorAll('.animated-underline');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Wait 1 second before adding the class
+                    setTimeout(() => {
+                        entry.target.classList.add('underline-active');
+                    }, 500);
+                } else {
+                    entry.target.classList.remove('underline-active');
+                }
+            });
+        }, { threshold: 0.90 });
+
+        underlines.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
