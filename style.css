@@ -1067,4 +1067,22 @@ footer {
 }
 
 
+/* Holiday course decor */
+.holiday-ribbon {
+  background: linear-gradient(90deg, #fbbf24 0%, #f472b6 100%);
+  color: #22223b;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 0 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(250, 204, 21, 0.15);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  animation: pulse-ribbon 1.5s infinite alternate;
+}
 
+@keyframes pulse-ribbon {
+  0% { box-shadow: 0 2px 12px 0 rgba(250, 204, 21, 0.15);}
+  100% { box-shadow: 0 4px 24px 0 rgba(236, 72, 153, 0.25);}
+}
