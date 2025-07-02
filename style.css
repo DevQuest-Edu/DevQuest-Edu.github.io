@@ -47,6 +47,18 @@ header {
   justify-content: space-between;
 }
 
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
 .logo-img {
   height: 90px;
   max-width: 260px;
@@ -76,8 +88,8 @@ nav .nav-list li a:hover {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("herobg.jpg") center center/cover no-repeat;
-  background-size: cover;
+  /* background: url("herobg.jpg") center center/cover no-repeat;
+  background-size: cover; */
   /* transition: background-size 0.2s cubic-bezier(0.4,0,0.2,1); */
   overflow: hidden;
 }
@@ -86,7 +98,7 @@ nav .nav-list li a:hover {
 .hero .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.72);
   /* You can change the alpha for lighter/darker overlay */
   z-index: 1;
 }
@@ -270,14 +282,14 @@ nav .nav-list li a:hover {
   width: 100%;
   /* Remove or comment out the height property */
   /* height: 100vh; */
-  background: url(adrian-regeci-ZGx4lYSCJec-unsplash.jpg) center center/cover no-repeat;
+  background-color: #000;
   padding: 160px 0 160px 0;
 }
 
 .about-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 1);
   z-index: 1;
   pointer-events: none;
 }
@@ -491,7 +503,7 @@ nav .nav-list li a:hover {
 .contact-section {
   position: relative;
   padding: 160px 0;
-  background: url(tianyi-ma-WiONHd_zYI4-unsplash.jpg) center center/cover no-repeat;
+  background-color: #000000e9;
   overflow: hidden;
 }
 
@@ -499,7 +511,7 @@ nav .nav-list li a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8); /* Same tint as other sections */
+  background: rgba(0, 0, 0, 0); /* Same tint as other sections */
   z-index: 1;
   pointer-events: none;
 }
@@ -1085,4 +1097,140 @@ footer {
 @keyframes pulse-ribbon {
   0% { box-shadow: 0 2px 12px 0 rgba(250, 204, 21, 0.15);}
   100% { box-shadow: 0 4px 24px 0 rgba(236, 72, 153, 0.25);}
+}
+
+/* Testimonial Carousel — Brand-Centred Styles */
+.testimonial-section {
+  background: #000000e9;      /* Soft lavender background */
+  padding: 80px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-title {
+  color: #ffffff;           /* Brand dark purple */
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.testimonial-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.testimonial-slide {
+  background: #ffffff;      /* Crisp white card */
+  border-radius: 16px;      /* Slightly larger rounding */
+  box-shadow: 0 8px 24px rgba(41, 14, 47, 0.05);
+  padding: 48px 32px;
+  max-width: 520px;
+  min-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-slide:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(41, 14, 47, 0.1);
+}
+
+.testimonial-text {
+  font-size: 1.25rem;
+  color: #290e2f;           /* Brand dark */
+  margin-bottom: 20px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  color: #a78bfa;           /* Brand accent purple */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Sleeker testimonial arrows */
+/* // filepath: /Users/kaushikgudivada/Desktop/Coding tutoring/DevQuest-Edu.github.io/style.css */
+.testimonial-prev,
+.testimonial-next {
+  background: transparent;
+  border: 2px solid #a78bfa;
+  color: inherit;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px rgba(167, 139, 250, 0.08);
+  padding: 0;
+}
+
+.testimonial-prev svg,
+.testimonial-next svg {
+  display: block;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+  border-color: #290e2f;
+  background: #f8f3ff;
+  box-shadow: 0 4px 16px rgba(41, 14, 47, 0.10);
+}
+
+.testimonial-prev:focus,
+.testimonial-next:focus {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+/* Optional: Add a subtle gradient overlay behind the carousel */
+.testimonial-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(247,235,255,0.6), rgba(250,245,255,0.6));
+  pointer-events: none;
+  z-index: -1;
+}
+
+.testimonial-slide {
+  /* ...existing styles... */
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+.slide-in-right {
+  animation: slideInRight 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-48px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(48px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }

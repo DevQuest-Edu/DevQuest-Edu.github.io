@@ -80,6 +80,12 @@
 
   <!-- Hero Section (with enhanced animations) -->
   <section class="hero" id="hero">
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="herobg.jpg">
+      <source src="devquestHeroVideo.mp4" type="video/mp4" />
+      <!-- Optionally add a WebM source for better browser support -->
+      <!-- <source src="your-video.webm" type="video/webm" /> -->
+      Your browser does not support the video tag.
+    </video>
     <div class="hero-overlay" data-aos="fade" data-aos-duration="1200"></div>
 
     <!-- Hero content + (optional) social icons on the right -->
@@ -96,7 +102,7 @@
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="650" data-aos-duration="900" style="font-size: 18px;">
           Hands-on coding and more in small classes with top-tier tutors. While
           building their future <br class="mobile-only-break">
-          <span class="highlight-git"><span class="aurora-text">Git portfolios.</span></span> 
+          <span><span class="aurora-text" style="">Git portfolios.</span></span> 
         </p>
         <a
           href="#courses"
@@ -132,6 +138,8 @@
 
   <!-- About Section (unchanged) -->
   <section id="about" class="about-section" style="background-color: #faf5ff;">
+
+    
     <div class="about-overlay"></div>
     
     <div class="container about-container" >
@@ -160,6 +168,29 @@
           />
         </svg>
       </a>
+    </div>
+  </section>
+
+  <!-- Testimonial Carousel -->
+  <section class="testimonial-section">
+    <div class="container">
+      <h2 class="testimonial-title"><span class="aurora-text">What Parents & Students Say</span></h2>
+      <div class="testimonial-carousel">
+        <button class="testimonial-prev" aria-label="Previous testimonial">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M18 24L10 14L18 4" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">"DevQuest made coding fun and easy for my son. He looks forward to every class!"</p>
+          <p class="testimonial-author">– Priya S, Parent</p>
+        </div>
+        <button class="testimonial-next" aria-label="Next testimonial">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M10 24L18 14L10 4" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -197,7 +228,7 @@
         </div>
 
         <!-- Web Building -->
-        <div class="course-card" data-aos="flip-left" data-aos-delay="100">
+        <!-- <div class="course-card" data-aos="flip-left" data-aos-delay="100">
           <img
             src="html css.png"
             alt="Web Building"
@@ -212,7 +243,7 @@
               Enroll Now
             </button>
           </div>
-        </div>
+        </div> -->
 
         <div class="course-card" data-aos="flip-left" data-aos-delay="100">
           <img
@@ -475,6 +506,70 @@
 
         underlines.forEach(el => observer.observe(el));
     });
+
+    // Testimonials array
+    const testimonials = [
+      {
+        text: `"DevQuest made coding fun and easy for my son. He looks forward to every class!"`,
+        author: "– Priya S., Parent"
+      },
+      {
+        text: `"I learned so much about Python and Git. Now I can show my projects to my friends!"`,
+        author: "– Aarav, Student"
+      },
+      {
+        text: `"The tutors are patient and explain everything clearly. Highly recommend!"`,
+        author: "– Michael T., Parent"
+      },
+      {
+        text: `"I built my first website and even uploaded it to GitHub!"`,
+        author: "– Emily, Student"
+      }
+    ];
+
+    let currentTestimonial = 0;
+    const slide = document.querySelector('.testimonial-slide');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+
+    function showTestimonial(index, direction = 'right') {
+      const slide = document.querySelector('.testimonial-slide');
+      // Fade out
+      slide.style.transition = 'opacity 0.25s cubic-bezier(0.4,0,0.2,1)';
+      slide.style.opacity = '0';
+
+      setTimeout(() => {
+        // Remove previous animation classes
+        slide.classList.remove('slide-in-left', 'slide-in-right');
+        // Update content
+        slide.querySelector('.testimonial-text').textContent = testimonials[index].text;
+        slide.querySelector('.testimonial-author').textContent = testimonials[index].author;
+        // Force reflow to restart animation
+        void slide.offsetWidth;
+        // Fade in + slide
+        slide.style.opacity = '1';
+        slide.classList.add(direction === 'left' ? 'slide-in-left' : 'slide-in-right');
+      }, 250);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentTestimonial, 'left');
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial, 'right');
+    });
+
+    // Optional: Auto-advance every 8 seconds
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial, 'right');
+    }, 8000);
+
+    // Initialize
+    showTestimonial(currentTestimonial, 'right');
   </script>
 
   <script type="application/ld+json">
