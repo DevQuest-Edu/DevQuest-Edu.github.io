@@ -349,7 +349,7 @@ nav .nav-list li a:hover {
 .courses-section {
   position: relative;
   padding: 160px 0;
-  background: url(anthony-garand-5sT07dJl65s-unsplash.jpg) center center/cover no-repeat;
+  background-color: #000;
   overflow: hidden;
 }
 
@@ -357,7 +357,7 @@ nav .nav-list li a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* Adjust alpha for lighter/darker tint */
+  background: rgba(0, 0, 0, 1); /* Adjust alpha for lighter/darker tint */
   z-index: 1;
   pointer-events: none;
 }
@@ -692,7 +692,7 @@ footer {
 
 /* —————— ABOUT HERO —————— */
 .about-hero {
-  background: url("herobg.jpg") center center/cover no-repeat;
+  background-color:#000;
   position: relative;
   min-height: 60vh;
   display: flex;
@@ -703,7 +703,7 @@ footer {
 .about-hero .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0,0,0,0.6);
+
   z-index: 1;
 }
 
@@ -724,7 +724,7 @@ footer {
 
 /* About main section matches index about-section */
 #about-main.about-section {
-  background: url(adrian-regeci-ZGx4lYSCJec-unsplash.jpg) center center/cover no-repeat;
+  background-color: #000000;
   position: relative;
   padding: 0px 0 100px 0;
 }
@@ -732,7 +732,7 @@ footer {
 #about-main .about-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,1);
   z-index: 1;
   pointer-events: none;
 }
