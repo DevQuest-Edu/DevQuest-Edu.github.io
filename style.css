@@ -1129,6 +1129,12 @@ footer {
   max-width: 520px;
   min-width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 160px;      /* Set a strict minimum height */
+  max-height: 160px;      /* Set a strict maximum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 .testimonial-slide:hover {
   transform: translateY(-8px);
@@ -1136,11 +1142,21 @@ footer {
 }
 
 .testimonial-text {
-  font-size: 1.25rem;
-  color: #290e2f;           /* Brand dark */
-  margin-bottom: 20px;
-  font-style: italic;
-  line-height: 1.5;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.4;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Responsive font scaling for overflow */
+  overflow-wrap: break-word;
+  hyphens: auto;
+  width: 100%;
+  /* Shrink font if needed */
+  /* font-size: calc(0.95rem - (0.05rem * (var(--testimonial-length, 0) - 80))); */
+  font-size: clamp(0.95rem, calc(1.25rem - 0.012rem * (var(--testimonial-length, 0) - 80)), 1.25rem);
+
 }
 
 .testimonial-author {

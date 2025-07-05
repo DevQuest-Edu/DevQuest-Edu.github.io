@@ -182,8 +182,8 @@
           </svg>
         </button>
         <div class="testimonial-slide">
-          <p class="testimonial-text">"DevQuest made coding fun and easy for my son. He looks forward to every class!"</p>
-          <p class="testimonial-author">– Priya S, Parent</p>
+          <p class="testimonial-text">"My kid says he enjoyed the classes a lot!"</p>
+          <p class="testimonial-author">– Priya, Parent</p>
         </div>
         <button class="testimonial-next" aria-label="Next testimonial">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -510,20 +510,20 @@
     // Testimonials array
     const testimonials = [
       {
-        text: `"DevQuest made coding fun and easy for my son. He looks forward to every class!"`,
-        author: "– Priya S., Parent"
+        text: `"My kid says he enjoyed the classes a lot!"`,
+        author: "– Priya, Parent"
       },
       {
-        text: `"I learned so much about Python and Git. Now I can show my projects to my friends!"`,
+        text: `"I learned Python in less than 2-3 lessons and have a complete project made!"`,
         author: "– Aarav, Student"
       },
       {
-        text: `"The tutors are patient and explain everything clearly. Highly recommend!"`,
-        author: "– Michael T., Parent"
+        text: `"We made a little budget finance tracker and it's so cool"`,
+        author: "– Harsh, Student"
       },
       {
-        text: `"I built my first website and even uploaded it to GitHub!"`,
-        author: "– Emily, Student"
+        text: `"These classes and tutors seem to be much better than other ones, I can actuallty see their progress"`,
+        author: "– Emily, Parent"
       }
     ];
 
@@ -544,12 +544,16 @@
         // Update content
         slide.querySelector('.testimonial-text').textContent = testimonials[index].text;
         slide.querySelector('.testimonial-author').textContent = testimonials[index].author;
+        const textEl = slide.querySelector('.testimonial-text');
+        const len = textEl.textContent.length;
+        slide.style.setProperty('--testimonial-length', len);
         // Force reflow to restart animation
         void slide.offsetWidth;
         // Fade in + slide
         slide.style.opacity = '1';
         slide.classList.add(direction === 'left' ? 'slide-in-left' : 'slide-in-right');
       }, 250);
+      
     }
 
     prevBtn.addEventListener('click', () => {
