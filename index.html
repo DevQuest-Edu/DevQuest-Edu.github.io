@@ -72,6 +72,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#courses">Courses</a></li>
           <li><a href="#contact">Contact Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
           <li><a href="about.html">About Us</a></li>
         </ul>
       </nav>
@@ -200,11 +201,11 @@
       <h2 data-aos="fade-right">Our Courses</h2>
       <h2 data-aos="fade-left" style="font-size: 20px; margin-top: -30px;">Your first time? Enjoy a <span class="aurora-text">FREE CLASS</span> to see if coding is right for your kid!</h2>
       <h2 data-aos="fade-left" style="font-size: 20px; margin-top: -30px;"><span class="animated-underline">All classes run for <span class="aurora-text">5 weeks</span> during the school term.</span></h2>
-      <div class="holiday-ribbon" data-aos="zoom-in" style="margin-bottom: 20px;">
+      <!-- <div class="holiday-ribbon" data-aos="zoom-in" style="margin-bottom: 20px;">
         <span>
-          🎉 <strong>Holiday course available!</strong> Click <b>Enroll Now</b> on a course and fill out the form!
+          🎉 <strong>Holiday course available!</strong> Click <b>Enrol Now</b> on a course and fill out the form!
         </span>
-      </div>
+      </div> -->
       <div class="course-grid">
         <!-- Python Beginner Course -->
         <div class="course-card" data-aos="flip-left">
@@ -216,14 +217,16 @@
             No Experience Required
           </div>
           <div class="course-content">
-            <h3>Python for Absolute Beginners (Y7-12)</h3>
+            <h3>Python for Absolute Beginners (Y6-12)</h3>
             <p>
               Interactive course teaching Python and coding fundamentals, Git
               portfolio building, and hands-on mini-projects.
             </p>
-            <button class="btn-course" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); return false;">
-              Enroll Now
-            </button>
+            <div class="course-buttons">
+              <button class="btn-course" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); return false;">Enrol Now</button>
+              <a href="pricing.html" class="btn-course">Price</a>
+            </div>
+            
           </div>
         </div>
 
@@ -240,7 +243,7 @@
               dynamic web pages and interactive features and add them to your portfolio!
             </p>
             <button class="btn-course" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); return false;">
-              Enroll Now
+              Enrol Now
             </button>
           </div>
         </div> -->
@@ -255,11 +258,15 @@
             <h3>JavaScript (Amateur)</h3>
             <p>
               Learn the core JavaScript language alongside Node.js! A very useful course to understand
-              some complex coding structures and methods. 
+              some complex coding structures and methods.
             </p>
-            <button class="btn-course" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); return false;">
-              Enroll Now
-            </button>
+            <div class="course-buttons">
+              <button class="btn-course" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); return false;">
+                Enrol Now
+              </button>
+              <a href="pricing.html" class="btn-course">Price</a>
+
+            </div>
           </div>
         </div>
 
@@ -277,7 +284,7 @@
             <h3>Make a Game With Python!</h3>
             <p>
               Introduction to game development using Python libraries. Create
-              your own game from scratch!
+              your own game from scratch! A little more advanced than the beginner course.
             </p>
           </div>
         </div>
@@ -296,7 +303,7 @@
             <h3>Make a Game With Godot Engine!</h3>
             <p>
               Introduction to game development using a game engine called
-              Godot. Create your own high‐quality game from scratch!
+              Godot. Create your own high-quality game from scratch!
             </p>
           </div>
         </div>
@@ -319,7 +326,7 @@
           <p><strong>Phone:</strong> 0423 549 723</p>
           <p>
             <strong>Location:</strong> Schofields, Sydney (Exact address
-            provided after enrollment)
+            provided after Enrolment)
           </p>
           <p>Follow us on social media:</p>
           <p>
@@ -468,23 +475,23 @@
       type();
     });
 
-    window.addEventListener('scroll', function() {
-        const hero = document.querySelector('.hero');
-        if (!hero) return;
-        // Disable zoom effect on mobile devices (width <= 600px)
-        if (window.innerWidth <= 600) {
-            hero.style.backgroundSize = "cover";
-            return;
-        }
-        // Only zoom while hero is in view
-        const scrollY = window.scrollY;
-        const maxZoom = 2.5; // Maximum zoom (e.g., 1.15 = 115%)
-        const minZoom = 1;    // Minimum zoom (100%)
-        const heroHeight = hero.offsetHeight;
-        // Calculate zoom based on scroll position (0 at top, maxZoom at bottom of hero)
-        let zoom = minZoom + ((Math.min(scrollY, heroHeight) / heroHeight) * (maxZoom - minZoom));
-        hero.style.backgroundSize = `${zoom * 100}% auto`;
-    });
+    // window.addEventListener('scroll', function() {
+    //     const hero = document.querySelector('.hero');
+    //     if (!hero) return;
+    //     // Disable zoom effect on mobile devices (width <= 600px)
+    //     if (window.innerWidth <= 600) {
+    //         hero.style.backgroundSize = "cover";
+    //         return;
+    //     }
+    //     // Only zoom while hero is in view
+    //     const scrollY = window.scrollY;
+    //     const maxZoom = 2.5; // Maximum zoom (e.g., 1.15 = 115%)
+    //     const minZoom = 1;    // Minimum zoom (100%)
+    //     const heroHeight = hero.offsetHeight;
+    //     // Calculate zoom based on scroll position (0 at top, maxZoom at bottom of hero)
+    //     let zoom = minZoom + ((Math.min(scrollY, heroHeight) / heroHeight) * (maxZoom - minZoom));
+    //     hero.style.backgroundSize = `${zoom * 100}% auto`;
+    // });
 
     document.addEventListener('DOMContentLoaded', function() {
         const underlines = document.querySelectorAll('.animated-underline');

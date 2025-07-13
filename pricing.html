@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pricing | DevQuest Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="Untitled design.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="DevQuest Education white.png" alt="DevQuest Education Logo" class="logo-img"/>
+      </a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#courses">Courses</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="min-height: 50vh; background-color: black;">
+    <div class="hero-overlay"></div>
+    <div class="hero-container container">
+      <div class="hero-content" style="text-align: center; margin: 0 auto;">
+        <h1 class="aurora-text" style="font-size: 3.5rem; margin-bottom: 1.5rem;">
+          Pricing Information
+        </h1>
+        <p class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 2rem;">
+          All DevQuest Education classes are <span style="font-weight: bold;">$30 per hour</span>.<br>
+          Each class session is <span style="font-weight: bold;">2 hours long.</span><br>
+          <span class="animated-underline" style="color: white; font-weight:400;">
+            5-Week Terms.
+          </span><br>
+          <span class="aurora-text" style="font-size: 2.5rem; color: #ce52ff; font-weight: bold;">
+            $60 per person, per class
+          </span>
+          
+        </p>
+        <ul style="font-size: 1.3rem; margin-bottom: 2.5rem; text-align: left; display: inline-block; color: #fff; list-style: disc outside; padding-left: 1.2rem; margin-left: 0;">
+          <li>Small group classes (max 5 students)</li>
+          <li>All materials and GitHub project resources included</li>
+          <li>No hidden fees</li>
+          <li>Pay by term (contact us for discontinuations and refunds)</li>
+        </ul>
+        <br>
+        <a href="index.html#contact" class="btn btn-primary" style="font-size: 1.1rem;">
+          Contact Us to Enrol
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 DevQuest Education. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      offset: 80,
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const underlines = document.querySelectorAll('.animated-underline');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Wait 1 second before adding the class
+                    setTimeout(() => {
+                        entry.target.classList.add('underline-active');
+                    }, 500);
+                } else {
+                    entry.target.classList.remove('underline-active');
+                }
+            });
+        }, { threshold: 0.90 });
+
+        underlines.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
