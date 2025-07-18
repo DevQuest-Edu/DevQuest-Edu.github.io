@@ -22,6 +22,11 @@
       </button>
       <nav id="main-nav">
         <ul class="nav-list">
+          <li>
+            <a href="#contact" class="button-85 free-trial-mobile" role="button" style="margin-bottom:12px;">
+              Free Trial
+            </a>
+          </li>
           <li><a href="index.html#hero">Home</a></li>
           <li><a href="index.html#courses">Courses</a></li>
           <li><a href="index.html#contact">Contact Us</a></li>
@@ -93,6 +98,31 @@
         }, { threshold: 0.90 });
 
         underlines.forEach(el => observer.observe(el));
+    });
+
+    AOS.init({
+      duration: 900,
+      once: true,
+      offset: 80,
+    });
+
+    // Hamburger menu toggle (add this block)
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.getElementById('main-nav');
+      if (hamburger && nav) {
+        hamburger.addEventListener('click', function() {
+          nav.classList.toggle('nav-open');
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+        });
+        document.querySelectorAll('.nav-list a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('nav-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
     });
   </script>
 </body>
